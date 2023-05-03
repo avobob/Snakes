@@ -1,10 +1,7 @@
-﻿  main.cpp
-  screen.cpp
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(149,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(150,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(155,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(155,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(172): warning C4715: 'screen::GetTileColor': not all control paths return a value
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  screen.cpp
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(319,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(320,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(325,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(325,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(343): warning C4715: 'screen::GetTileColor': not all control paths return a value
   Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe

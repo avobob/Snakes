@@ -2,9 +2,16 @@
 #include "raylib.h"
 #include <stdlib.h>
 #include <random>
+#include <iostream>
 
-int redBoxX = 12;
-int redBoxY = 12;
+using namespace std;
+int whiteBox = 362;
+int greenBox = 337;
+int redBox = 312;
+int keyA = true;
+int keyW = true;
+int keyS = false;
+int keyD = true;
 screen::screen()
 {
 
@@ -25,20 +32,21 @@ void screen::Run()
 		Update(GetFrameTime());
 		Draw();
 	}
+	//Drawing();
 	Unload();
 }
-void screen::Drawing()
-{
-	while (!WindowShouldClose())
-	{
-		BeginDrawing();
-		ClearBackground(RAYWHITE);
-
-		DrawPixel(12,12,RED);
-
-		EndDrawing();
-	}
-}
+//void screen::Drawing()
+//{
+//	while (!WindowShouldClose())
+//	{
+//		BeginDrawing();
+//		ClearBackground(RAYWHITE);
+//
+//		DrawPixel(12,12,RED);
+//
+//		EndDrawing();
+//	}
+//}
 
 void screen::Load()
 {
@@ -59,9 +67,17 @@ void screen::Load()
 	{
 	m_tiles[i] = 0;
 	}
+	for (int i = 0; i < 625; i++)
+	{
+		m_tiles[redBox] = 1;
+	}
+	for (int i = 0; i < 625; i++)
+	{
+		m_tiles[greenBox] = 2;
+	}
 	//for (int i = 0; i < 625; i++)
 	//{
-	//	m_tiles[312] = 1;
+	//	m_tiles[whiteBox] = 3;
 	//}
 	// -----------------------------------------------------
 }
@@ -79,28 +95,75 @@ void screen::Unload()
 
 void screen::Update(float deltaTime)
 {
-	int IsPressed = false;
-	if (IsKeyPressed(KEY_A)||(IsKeyPressed(KEY_W))||(IsKeyPressed(KEY_S))||(IsKeyPressed(KEY_D)))
-	{
-		IsPressed = true;
-	}
-	/*if (IsKeyPressed(KEY_A))
-	{
-		IsPressed = true;
-	}
-	if (IsKeyPressed(KEY_W)) 
-	{
-		IsPressed = true;
-	}
-	if (IsKeyPressed(KEY_S)) 
-	{
-		IsPressed = true;
-	}
-	if (IsKeyPressed(KEY_D)) 
+	int IsPressedA = false;
+	int IsPressedW = false;
+	int IsPressedS = false;
+	int IsPressedD = false;
+	/*if (IsKeyPressed(KEY_A)||(IsKeyPressed(KEY_W))||(IsKeyPressed(KEY_S))||(IsKeyPressed(KEY_D)))
 	{
 		IsPressed = true;
 	}*/
-	if (IsPressed)
+	if (IsKeyPressed(KEY_A))
+	{
+		if (keyA)
+		{
+			keyA = true;
+			keyW = true;
+			keyS = true;
+			keyD = false;
+		IsPressedA = true;
+		cout << keyA << endl;
+		cout << keyW << endl;
+		cout << keyS << endl;
+		cout << keyD << endl;
+		}
+	}
+	if (IsKeyPressed(KEY_W)) 
+	{
+		if (keyW)
+		{
+			keyA = true;
+			keyW = true;
+			keyS = false;
+			keyD = true;
+			IsPressedW = true;
+			cout << keyA << endl;
+			cout << keyW << endl;
+			cout << keyS << endl;
+			cout << keyD << endl;
+		}
+	}
+	if (IsKeyPressed(KEY_S)) 
+	{
+		if (keyS)
+		{
+			keyA = true;
+			keyW = false;
+			keyS = true;
+			keyD = true;
+			IsPressedS = true;
+			cout << keyA << endl;
+			cout << keyW << endl;
+			cout << keyS << endl;
+			cout << keyD << endl;
+		}
+	}
+	if (IsKeyPressed(KEY_D)) 
+	{
+		if (keyD)
+		{
+			keyA = false;
+			keyW = true;
+			keyS = true;
+			keyD = true;
+			IsPressedD = true;
+			cout << keyA << endl;
+			cout << keyW << endl;
+			cout << keyS << endl;
+			cout << keyD << endl;
+		}
+	}
+	if (IsPressedA)
 	{
 		//Vector2 headPos = GetMousePosition();
 		// Task 3:
@@ -109,19 +172,126 @@ void screen::Update(float deltaTime)
 		{
 			if (m_tiles[i] == 1)
 			{
-				m_tiles[redBoxX, redBoxY] = 2;
-		//		int headPosX = 12;
-		//		int headPosY = 12;
-		//int rowIndex = headPosY;
-		//int colIndex = headPosX;
+				m_tiles[redBox] = 2;
+				whiteBox = greenBox;
+				greenBox = redBox;
+				redBox -= 1;
+				m_tiles[redBox] = 1;
+				m_tiles[greenBox] = 2;
+				m_tiles[whiteBox] = 0;
+
+				int headPosX = redBox;
+				int headPosY = redBox;
+		int rowIndex = headPosY;
+		int colIndex = headPosX;
 
 		// TODO: calculate the index of the tile clicked on based on the row/col index
-		/*int tileIndex = rowIndex * COLS + colIndex;*/
+		int tileIndex = rowIndex * COLS + colIndex;
+		//std::cout << tileIndex << "-------------------------------------" << std::endl;
 
-		//m_tiles[tileIndex] += 1;
-		//if (m_tiles[tileIndex] >= 3)
+		////m_tiles[tileIndex] += 1;
+		//if (m_tiles[tileIndex] >= 5)
 		//	m_tiles[tileIndex] = 0;
-		IsPressed = false;
+		IsPressedA = false;
+			}
+		}
+	}
+	if (IsPressedW)
+	{
+		//Vector2 headPos = GetMousePosition();
+		// Task 3:
+		// TODO: Calculate row and col index based on the mouse positon
+		for (int i = 0; i < 625; i++)
+		{
+			if (m_tiles[i] == 1)
+			{
+				m_tiles[redBox] = 2;
+				whiteBox = greenBox;
+				greenBox = redBox;
+				redBox -= 25;
+				m_tiles[redBox] = 1;
+				m_tiles[greenBox] = 2;
+				m_tiles[whiteBox] = 0;
+
+				int headPosX = redBox;
+				int headPosY = redBox;
+				int rowIndex = headPosY;
+				int colIndex = headPosX;
+
+				// TODO: calculate the index of the tile clicked on based on the row/col index
+				int tileIndex = rowIndex * COLS + colIndex;
+				//std::cout << tileIndex << "-------------------------------------" << std::endl;
+
+				////m_tiles[tileIndex] += 1;
+				//if (m_tiles[tileIndex] >= 5)
+				//	m_tiles[tileIndex] = 0;
+				IsPressedW = false;
+			}
+		}
+	}
+	if (IsPressedS)
+	{
+		//Vector2 headPos = GetMousePosition();
+		// Task 3:
+		// TODO: Calculate row and col index based on the mouse positon
+		for (int i = 625; i > 0; i--)
+		{
+			if (m_tiles[i] == 1)
+			{
+				m_tiles[redBox] = 2;
+				whiteBox = greenBox;
+				greenBox = redBox;
+				redBox += 25;
+				m_tiles[redBox] = 1;
+				m_tiles[greenBox] = 2;
+				m_tiles[whiteBox] = 0;
+
+				int headPosX = redBox;
+				int headPosY = redBox;
+				int rowIndex = headPosY;
+				int colIndex = headPosX;
+
+				// TODO: calculate the index of the tile clicked on based on the row/col index
+				int tileIndex = rowIndex * COLS + colIndex;
+				//std::cout << tileIndex << "-------------------------------------" << std::endl;
+
+				////m_tiles[tileIndex] += 1;
+				//if (m_tiles[tileIndex] >= 5)
+				//	m_tiles[tileIndex] = 0;
+				IsPressedS = false;
+			}
+		}
+	}
+	if (IsPressedD)
+	{
+		//Vector2 headPos = GetMousePosition();
+		// Task 3:
+		// TODO: Calculate row and col index based on the mouse positon
+		for (int i = 625; i > 0; i--)
+		{
+			if (m_tiles[i] == 1)
+			{
+				m_tiles[redBox] = 2;
+				whiteBox = greenBox;
+				greenBox = redBox;
+				redBox += 1;
+				m_tiles[redBox] = 1;
+				m_tiles[greenBox] = 2;
+				m_tiles[whiteBox] = 0;
+
+				int headPosX = redBox;
+				int headPosY = redBox;
+				int rowIndex = headPosY;
+				int colIndex = headPosX;
+
+				// TODO: calculate the index of the tile clicked on based on the row/col index
+				int tileIndex = rowIndex * COLS + colIndex;
+				//std::cout << tileIndex << "-------------------------------------" << std::endl;
+
+				////m_tiles[tileIndex] += 1;
+				//if (m_tiles[tileIndex] >= 5)
+				//	m_tiles[tileIndex] = 0;
+				IsPressedD = false;
 			}
 		}
 	}
@@ -168,5 +338,6 @@ Color screen::GetTileColor(int tileValue)
 	case 0:	return WHITE;
 	case 1: return RED;
 	case 2: return GREEN;
+	case 3: return YELLOW;
 	}
 }
