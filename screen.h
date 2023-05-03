@@ -27,13 +27,13 @@ private:
 	int m_windowWidth = 800;
 	int m_windowHeight = 800;
 
-	static const int ROWS = 25;
-	static const int COLS = 25;
+	static const int ROWS = 27;
+	static const int COLS = 27;
 
 	int m_tiles[ROWS * COLS];
 
-	int m_tileWidth = 32;
-	int m_tileHeight =32;
+	int m_tileWidth = 30;
+	int m_tileHeight = 30;
 
 };
 
