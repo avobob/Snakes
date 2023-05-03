@@ -118,6 +118,7 @@ void screen::Update(float deltaTime)
 		if (m_tiles[tileIndex] >= 3)
 			m_tiles[tileIndex] = 0;
 		IsPressed = false;
+		//test
 			}
 		}
 	}
