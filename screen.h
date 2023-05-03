@@ -1,7 +1,7 @@
 #pragma once
-
+#include <string>
 #include "raylib.h"
-
+using namespace std;
 class screen
 {
 public:
@@ -15,7 +15,8 @@ private:
 
 	void Load();
 	void Unload();
-	void DrawPixel(int posX, int posY, Color color);
+	void DrawPixel(int posX, int posY, int r, int g, int b, int a);
+	//void DrawPixel(int posX, int posY, string color);
 
 	void Update(float deltaTime);
 	void Draw();

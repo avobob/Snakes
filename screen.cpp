@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include <random>
 
-//test test
-//test test
-//test test
-//test test
-//test test
-//test test
-//test test
+//test test 1
+//test test 1
+//test test 1
+//test test 1
+//test test 1
+//test test 1
+//test test 1
 screen::screen()
 {
 
@@ -25,7 +25,7 @@ void screen::Run()
 	InitWindow(m_windowWidth, m_windowHeight, "Simple Tilemap");
 	SetTargetFPS(60);
 	Load();
-
+	DrawPixel(0,0,0,0,0,0);
 	while (!WindowShouldClose())
 	{
 		Update(GetFrameTime());
@@ -34,6 +34,16 @@ void screen::Run()
 
 	Unload();
 }
+void screen::DrawPixel(int posX, int posY, int r, int g, int b, int a)
+{
+	posX = 12;
+	posY = 12;
+	r = 200;
+	g = 122;
+	b = 255;
+	a = 255;
+}
+
 void screen::Load()
 {
 	// Task1:
@@ -68,11 +78,11 @@ void screen::Unload()
 void screen::Update(float deltaTime)
 {
 	int IsPressed = false;
-	//if (IsKeyPressed(KEY_A)|(KEY_W)|(KEY_S)|(KEY_D))
-	//{
-	//	IsPressed = true;
-	//}
-	if (IsKeyPressed(KEY_A))
+	if (IsKeyPressed(KEY_A)||(IsKeyPressed(KEY_W))||(IsKeyPressed(KEY_S))||(IsKeyPressed(KEY_D)))
+	{
+		IsPressed = true;
+	}
+	/*if (IsKeyPressed(KEY_A))
 	{
 		IsPressed = true;
 	}
@@ -87,7 +97,7 @@ void screen::Update(float deltaTime)
 	if (IsKeyPressed(KEY_D)) 
 	{
 		IsPressed = true;
-	}
+	}*/
 	if (IsPressed)
 	{
 		//Vector2 headPos = GetMousePosition();
@@ -95,10 +105,9 @@ void screen::Update(float deltaTime)
 		// TODO: Calculate row and col index based on the mouse positon
 		for (int i = 0; i < 625; i++)
 		{
-			if (*(m_tiles + i)== 1)
+			if (m_tiles[i] == 1)
 			{
-				Vector2 headPos = ;
-
+				int headPos
 		int rowIndex = headPos.y / m_tileHeight;
 		int colIndex = headPos.x / m_tileWidth;
 

@@ -1,9 +1,9 @@
 ﻿  screen.cpp
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(96,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(97,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(130,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(131,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(136,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(136,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\wyatt\source\repos\Snake\Snake\screen.cpp(153): warning C4715: 'screen::GetTileColor': not all control paths return a value
-  Snake.vcxproj -> C:\Users\wyatt\source\repos\Snake\x64\Debug\Snake.exe
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(112,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(113,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(146,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(147,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(152,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(152,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(169): warning C4715: 'screen::GetTileColor': not all control paths return a value
+  Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe
