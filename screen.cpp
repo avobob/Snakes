@@ -107,7 +107,7 @@ void screen::Update(float deltaTime)
 		{
 			if (m_tiles[i] == 1)
 			{
-				int headPos
+				int headPos = 0;
 		int rowIndex = headPos.y / m_tileHeight;
 		int colIndex = headPos.x / m_tileWidth;
 
@@ -118,7 +118,6 @@ void screen::Update(float deltaTime)
 		if (m_tiles[tileIndex] >= 3)
 			m_tiles[tileIndex] = 0;
 		IsPressed = false;
-		//test
 			}
 		}
 	}
