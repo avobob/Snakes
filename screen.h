@@ -10,12 +10,11 @@ public:
 	~screen();
 
 	void Run();
-
+	void Drawing();
 private:
 
 	void Load();
 	void Unload();
-	void DrawPixel(int posX, int posY, int r, int g, int b, int a);
 	//void DrawPixel(int posX, int posY, string color);
 
 	void Update(float deltaTime);
@@ -35,5 +34,6 @@ private:
 
 	int m_tileWidth = 32;
 	int m_tileHeight = 32;
+
 };
 

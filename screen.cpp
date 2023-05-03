@@ -3,13 +3,8 @@
 #include <stdlib.h>
 #include <random>
 
-//test test 1
-//test test 1
-//test test 1
-//test test 1
-//test test 1
-//test test 1
-//test test 1
+int redBoxX = 12;
+int redBoxY = 12;
 screen::screen()
 {
 
@@ -25,23 +20,24 @@ void screen::Run()
 	InitWindow(m_windowWidth, m_windowHeight, "Simple Tilemap");
 	SetTargetFPS(60);
 	Load();
-	DrawPixel(0,0,0,0,0,0);
 	while (!WindowShouldClose())
 	{
 		Update(GetFrameTime());
 		Draw();
 	}
-
 	Unload();
 }
-void screen::DrawPixel(int posX, int posY, int r, int g, int b, int a)
+void screen::Drawing()
 {
-	posX = 12;
-	posY = 12;
-	r = 200;
-	g = 122;
-	b = 255;
-	a = 255;
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+		ClearBackground(RAYWHITE);
+
+		DrawPixel(12,12,RED);
+
+		EndDrawing();
+	}
 }
 
 void screen::Load()
@@ -63,13 +59,19 @@ void screen::Load()
 	{
 	m_tiles[i] = 0;
 	}
-	for (int i = 0; i < 625; i++)
-	{
-		m_tiles[312] = 1;
-	}
+	//for (int i = 0; i < 625; i++)
+	//{
+	//	m_tiles[312] = 1;
+	//}
 	// -----------------------------------------------------
 }
 
+//void screen::DrawPixel()
+//{
+//	int posX = 12;
+//	int posY = 12;
+//
+//}
 void screen::Unload()
 {
 
@@ -107,16 +109,18 @@ void screen::Update(float deltaTime)
 		{
 			if (m_tiles[i] == 1)
 			{
-				int headPos = 0;
-		int rowIndex = headPos.y / m_tileHeight;
-		int colIndex = headPos.x / m_tileWidth;
+				m_tiles[redBoxX, redBoxY] = 2;
+		//		int headPosX = 12;
+		//		int headPosY = 12;
+		//int rowIndex = headPosY;
+		//int colIndex = headPosX;
 
 		// TODO: calculate the index of the tile clicked on based on the row/col index
-		int tileIndex = rowIndex * COLS + colIndex;
+		/*int tileIndex = rowIndex * COLS + colIndex;*/
 
-		m_tiles[tileIndex] += 1;
-		if (m_tiles[tileIndex] >= 3)
-			m_tiles[tileIndex] = 0;
+		//m_tiles[tileIndex] += 1;
+		//if (m_tiles[tileIndex] >= 3)
+		//	m_tiles[tileIndex] = 0;
 		IsPressed = false;
 			}
 		}
