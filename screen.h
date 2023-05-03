@@ -24,8 +24,8 @@ private:
 
 private:
 
-	int m_windowWidth = 800;
-	int m_windowHeight = 800;
+	int m_windowWidth = 810;
+	int m_windowHeight = 810;
 
 	static const int ROWS = 27;
 	static const int COLS = 27;
@@ -34,6 +34,9 @@ private:
 
 	int m_tileWidth = 30;
 	int m_tileHeight = 30;
+
+	static const int ROWS2 = 21;
+	int b_tiles[ROWS2];
 
 };
 
