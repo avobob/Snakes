@@ -15,6 +15,9 @@ private:
 
 	void Load();
 	void Unload();
+	void Border();
+	void Body();
+	//void BodyColour();
 	//void DrawPixel(int posX, int posY, string color);
 
 	void Update(float deltaTime);
