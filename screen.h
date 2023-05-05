@@ -34,6 +34,7 @@ private:
 	int greenBox = 391;
 	int redBox = 364;
 	int yellowBox = 0;
+	int tempBox;
 	const char* GameOver = nullptr;
 	int GameCounter = -1;
 	int Counter = 0;

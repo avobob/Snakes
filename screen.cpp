@@ -209,7 +209,6 @@ void screen::Update(float deltaTime)
 		}
 	}
 
-
 	if (Move == 4 && fpsCounter == frameAmount)
 	{
 		for (int i = 0; i < 729; i++)
