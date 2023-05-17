@@ -95,11 +95,6 @@ void screen::Border()
 	m_tiles[648] = 4;
 	m_tiles[674] = 4;
 	m_tiles[675] = 4;
-	m_tiles[675] = 4;
-	m_tiles[675] = 4;
-	m_tiles[675] = 4;
-	m_tiles[675] = 4;
-
 	for (int i = 701; i < 729; i++)
 	{
 		m_tiles[i] = 4;
@@ -159,7 +154,7 @@ void screen::Update(float deltaTime)
 		if (m_tiles[n] == 0)
 		{
 			m_tiles[n] = 3;
-			Counter++;
+			Counter --;
 			GameCounter++;
 			frameAmount--;
 		}
@@ -167,49 +162,102 @@ void screen::Update(float deltaTime)
 	if (m_tiles[redBox] == 4)
 	{
 		GameOver = "GAME OVER!";
+		GameEnd = true;
+		Move = 0;
 	}
 	else if (m_tiles[redBox] == 2)
 	{
 		GameOver = "GAME OVER!";
+		GameEnd = true;
+		Move = 0;
 	}
-	if (IsKeyPressed(KEY_A))
+	if(!GameEnd)
 	{
-		if (Key != 1 && TOD > frameAmount)
+		if (IsKeyPressed(KEY_A))
 		{
-			Move = 4;
-			Key = 4;
-			TOD = 0;
+			if (Key != 1 && TOD > frameAmount)
+			{
+				Move = 4;
+				Key = 4;
+				TOD = 0;
+			}
+		}
+		if (IsKeyPressed(KEY_W))
+		{
+			if (Key != 2 && TOD > frameAmount)
+			{
+				Move = 3;
+				Key = 3;
+				TOD = 0;
+			}
+		}
+		if (IsKeyPressed(KEY_S))
+		{
+			if (Key != 3 && TOD > frameAmount)
+			{
+				Move = 2;
+				Key = 2;
+				TOD = 0;
+			}
+		}
+		if (IsKeyPressed(KEY_D))
+		{
+			if (Key != 4 && TOD > frameAmount)
+			{
+				Move = 1;
+				Key = 1;
+				TOD = 0;
+			}
 		}
 	}
-	if (IsKeyPressed(KEY_W))
+	if ((Move == 4) && (fpsCounter == frameAmount))
 	{
-		if (Key != 2 && TOD > frameAmount)
+		//int i = 21; i > Counter; i--;
+		m_tiles[redBox] = 2;
+		whiteBox = b_tiles[0];
+		b_tiles[0] = b_tiles[1];
+		b_tiles[1] = b_tiles[2];
+		b_tiles[2] = b_tiles[3];
+		b_tiles[3] = b_tiles[4];
+		b_tiles[4] = b_tiles[5];
+		b_tiles[5] = b_tiles[6];
+		b_tiles[6] = b_tiles[7];
+		b_tiles[7] = b_tiles[8];
+		b_tiles[8] = b_tiles[9];
+		b_tiles[9] = b_tiles[10];
+		b_tiles[10] = b_tiles[11];
+		b_tiles[11] = b_tiles[12];
+		b_tiles[12] = b_tiles[13];
+		b_tiles[13] = b_tiles[14];
+		b_tiles[14] = b_tiles[15];
+		b_tiles[15] = b_tiles[16];
+		b_tiles[16] = b_tiles[17];
+		b_tiles[17] = b_tiles[18];
+		b_tiles[18] = b_tiles[19];
+		b_tiles[19] = b_tiles[20];
+		b_tiles[20] = greenBox;
+		greenBox = redBox;
+		redBox -= 1;
+		//if (Counter > 0)
+		//{
+		//	m_tiles[redBox] = 1;
+		//	m_tiles[greenBox] = 2;
+		//	m_tiles[b_tiles[i]] = 2;
+		//	m_tiles[b_tiles[Counter]] = 0;
+		//}
+		if (Counter > 0)
 		{
-			Move = 3;
-			Key = 3;
-			TOD = 0;
+			m_tiles[redBox] = 1;
+			m_tiles[greenBox] = 2;
+			for (int i = 20; i >= Counter; i--) 
+			{
+				m_tiles[b_tiles[i]] = 2;
+			}
+			m_tiles[b_tiles[Counter]] = 0;
 		}
+		fpsCounter = 0;
 	}
-	if (IsKeyPressed(KEY_S))
-	{
-		if (Key != 3 && TOD > frameAmount)
-		{
-			Move = 2;
-			Key = 2;
-			TOD = 0;
-		}
-	}
-	if (IsKeyPressed(KEY_D))
-	{
-		if (Key != 4 && TOD > frameAmount)
-		{
-			Move = 1;
-			Key = 1;
-			TOD = 0;
-		}
-	}
-
-	if (Move == 4 && fpsCounter == frameAmount)
+	/*if (Move == 4 && fpsCounter == frameAmount)
 	{
 		for (int i = 0; i < 729; i++)
 		{
@@ -244,112 +292,121 @@ void screen::Update(float deltaTime)
 			}
 		}
 		fpsCounter = 0;
-	}
-	if (Move == 3 && fpsCounter == frameAmount)
+	}*/
+	if ((Move == 3) && (fpsCounter == frameAmount))
 	{
-		for (int i = 0; i < 729; i++)
+		int i = 21; i > Counter; i--;
+		m_tiles[redBox] = 2;
+		whiteBox = b_tiles[1];
+		b_tiles[1] = b_tiles[2];
+		b_tiles[2] = b_tiles[3];
+		b_tiles[3] = b_tiles[4];
+		b_tiles[4] = b_tiles[5];
+		b_tiles[5] = b_tiles[6];
+		b_tiles[6] = b_tiles[7];
+		b_tiles[7] = b_tiles[8];
+		b_tiles[8] = b_tiles[9];
+		b_tiles[9] = b_tiles[10];
+		b_tiles[10] = b_tiles[11];
+		b_tiles[11] = b_tiles[12];
+		b_tiles[12] = b_tiles[13];
+		b_tiles[13] = b_tiles[14];
+		b_tiles[14] = b_tiles[15];
+		b_tiles[15] = b_tiles[16];
+		b_tiles[16] = b_tiles[17];
+		b_tiles[17] = b_tiles[18];
+		b_tiles[18] = b_tiles[19];
+		b_tiles[19] = b_tiles[20];
+		b_tiles[20] = greenBox;
+		greenBox = redBox;
+		redBox -= 27;
+		if (Counter > 0)
 		{
-			if (m_tiles[i] == 1)
+			m_tiles[redBox] = 1;
+			m_tiles[greenBox] = 2;
+			for (int i = 20; i >= Counter; i--)
 			{
-				m_tiles[redBox] = 2;
-				whiteBox = box1; box1 = box2; box2 = box3; box3 = box4; box4 = box5; box5 = box6; box6 = box7; box7 = box8; box8 = box9; box9 = box10; box10 = box11; box11 = box12; box12 = box13; box13 = box14; box14 = box15; box15 = box16; box16 = box17; box17 = box18; box18 = box19; box19 = box20; box20 = box21; box21 = greenBox; greenBox = redBox;
-				redBox -= 27;
-				m_tiles[redBox] = 1;
-				if (Counter > 0)m_tiles[greenBox] = 5; m_tiles[box21] = 0;
-				if (Counter > 1)m_tiles[box21] = 2, m_tiles[box20] = 0;
-				if (Counter > 2)m_tiles[box20] = 5, m_tiles[box19] = 0;
-				if (Counter > 3)m_tiles[box19] = 2, m_tiles[box18] = 0;
-				if (Counter > 4)m_tiles[box18] = 5, m_tiles[box17] = 0;
-				if (Counter > 5)m_tiles[box17] = 2, m_tiles[box16] = 0;
-				if (Counter > 6)m_tiles[box16] = 5, m_tiles[box15] = 0;
-				if (Counter > 7)m_tiles[box15] = 2, m_tiles[box14] = 0;
-				if (Counter > 8)m_tiles[box14] = 5, m_tiles[box13] = 0;
-				if (Counter > 9)m_tiles[box13] = 2, m_tiles[box12] = 0;
-				if (Counter > 10)m_tiles[box12] = 5, m_tiles[box11] = 0;
-				if (Counter > 11)m_tiles[box11] = 2, m_tiles[box10] = 0;
-				if (Counter > 12)m_tiles[box10] = 5, m_tiles[box9] = 0;
-				if (Counter > 13)m_tiles[box9] = 2, m_tiles[box8] = 0;
-				if (Counter > 14)m_tiles[box8] = 5, m_tiles[box7] = 0;
-				if (Counter > 15)m_tiles[box7] = 2, m_tiles[box6] = 0;
-				if (Counter > 16)m_tiles[box6] = 5, m_tiles[box5] = 0;
-				if (Counter > 17)m_tiles[box5] = 2, m_tiles[box4] = 0;
-				if (Counter > 18)m_tiles[box4] = 5, m_tiles[box3] = 0;
-				if (Counter > 19)m_tiles[box3] = 2, m_tiles[box2] = 0;
-				if (Counter > 20)m_tiles[box2] = 5, m_tiles[box1] = 0;
-				if (Counter > 21)m_tiles[box1] = 2, m_tiles[whiteBox] = 0;
+				m_tiles[b_tiles[i]] = 2;
 			}
+			m_tiles[b_tiles[Counter]] = 0;
 		}
 		fpsCounter = 0;
 	}
-	if (Move == 2 && fpsCounter == frameAmount)
+	if ((Move == 2) && (fpsCounter == frameAmount))
 	{
-		for (int i = 729; i > 0; i--)
+		int i = 21; i > Counter; i--;
+		m_tiles[redBox] = 2;
+		whiteBox = b_tiles[1];
+		b_tiles[1] = b_tiles[2];
+		b_tiles[2] = b_tiles[3];
+		b_tiles[3] = b_tiles[4];
+		b_tiles[4] = b_tiles[5];
+		b_tiles[5] = b_tiles[6];
+		b_tiles[6] = b_tiles[7];
+		b_tiles[7] = b_tiles[8];
+		b_tiles[8] = b_tiles[9];
+		b_tiles[9] = b_tiles[10];
+		b_tiles[10] = b_tiles[11];
+		b_tiles[11] = b_tiles[12];
+		b_tiles[12] = b_tiles[13];
+		b_tiles[13] = b_tiles[14];
+		b_tiles[14] = b_tiles[15];
+		b_tiles[15] = b_tiles[16];
+		b_tiles[16] = b_tiles[17];
+		b_tiles[17] = b_tiles[18];
+		b_tiles[18] = b_tiles[19];
+		b_tiles[19] = b_tiles[20];
+		b_tiles[20] = greenBox;
+		greenBox = redBox;
+		redBox += 27;
+		if (Counter > 0)
 		{
-			if (m_tiles[i] == 1)
+			m_tiles[redBox] = 1;
+			m_tiles[greenBox] = 2;
+			for (int i = 20; i >= Counter; i--)
 			{
-				m_tiles[redBox] = 2;
-				whiteBox = box1; box1 = box2; box2 = box3; box3 = box4; box4 = box5; box5 = box6; box6 = box7; box7 = box8; box8 = box9; box9 = box10; box10 = box11; box11 = box12; box12 = box13; box13 = box14; box14 = box15; box15 = box16; box16 = box17; box17 = box18; box18 = box19; box19 = box20; box20 = box21; box21 = greenBox; greenBox = redBox;
-				redBox += 27;
-				m_tiles[redBox] = 1;
-				if (Counter > 0)m_tiles[greenBox] = 5; m_tiles[box21] = 0;
-				if (Counter > 1)m_tiles[box21] = 2, m_tiles[box20] = 0;
-				if (Counter > 2)m_tiles[box20] = 5, m_tiles[box19] = 0;
-				if (Counter > 3)m_tiles[box19] = 2, m_tiles[box18] = 0;
-				if (Counter > 4)m_tiles[box18] = 5, m_tiles[box17] = 0;
-				if (Counter > 5)m_tiles[box17] = 2, m_tiles[box16] = 0;
-				if (Counter > 6)m_tiles[box16] = 5, m_tiles[box15] = 0;
-				if (Counter > 7)m_tiles[box15] = 2, m_tiles[box14] = 0;
-				if (Counter > 8)m_tiles[box14] = 5, m_tiles[box13] = 0;
-				if (Counter > 9)m_tiles[box13] = 2, m_tiles[box12] = 0;
-				if (Counter > 10)m_tiles[box12] = 5, m_tiles[box11] = 0;
-				if (Counter > 11)m_tiles[box11] = 2, m_tiles[box10] = 0;
-				if (Counter > 12)m_tiles[box10] = 5, m_tiles[box9] = 0;
-				if (Counter > 13)m_tiles[box9] = 2, m_tiles[box8] = 0;
-				if (Counter > 14)m_tiles[box8] = 5, m_tiles[box7] = 0;
-				if (Counter > 15)m_tiles[box7] = 2, m_tiles[box6] = 0;
-				if (Counter > 16)m_tiles[box6] = 5, m_tiles[box5] = 0;
-				if (Counter > 17)m_tiles[box5] = 2, m_tiles[box4] = 0;
-				if (Counter > 18)m_tiles[box4] = 5, m_tiles[box3] = 0;
-				if (Counter > 19)m_tiles[box3] = 2, m_tiles[box2] = 0;
-				if (Counter > 20)m_tiles[box2] = 5, m_tiles[box1] = 0;
-				if (Counter > 21)m_tiles[box1] = 2, m_tiles[whiteBox] = 0;
+				m_tiles[b_tiles[i]] = 2;
 			}
+			m_tiles[b_tiles[Counter]] = 0;
 		}
 		fpsCounter = 0;
 	}
-	if (Move == 1 && fpsCounter == frameAmount)
+	if ((Move == 1) && (fpsCounter == frameAmount))
 	{
-		for (int i = 729; i > 0; i--)
+		int i = 21; i > Counter; i--;
+		m_tiles[redBox] = 2;
+		whiteBox = b_tiles[1];
+		b_tiles[1] = b_tiles[2];
+		b_tiles[2] = b_tiles[3];
+		b_tiles[3] = b_tiles[4];
+		b_tiles[4] = b_tiles[5];
+		b_tiles[5] = b_tiles[6];
+		b_tiles[6] = b_tiles[7];
+		b_tiles[7] = b_tiles[8];
+		b_tiles[8] = b_tiles[9];
+		b_tiles[9] = b_tiles[10];
+		b_tiles[10] = b_tiles[11];
+		b_tiles[11] = b_tiles[12];
+		b_tiles[12] = b_tiles[13];
+		b_tiles[13] = b_tiles[14];
+		b_tiles[14] = b_tiles[15];
+		b_tiles[15] = b_tiles[16];
+		b_tiles[16] = b_tiles[17];
+		b_tiles[17] = b_tiles[18];
+		b_tiles[18] = b_tiles[19];
+		b_tiles[19] = b_tiles[20];
+		b_tiles[20] = greenBox;
+		greenBox = redBox;
+		redBox += 1;
+		if (Counter > 0)
 		{
-			if (m_tiles[i] == 1)
+			m_tiles[redBox] = 1;
+			m_tiles[greenBox] = 2;
+			for (int i = 20; i >= Counter; i--)
 			{
-				m_tiles[redBox] = 2;
-				whiteBox = box1; box1 = box2; box2 = box3; box3 = box4; box4 = box5; box5 = box6; box6 = box7; box7 = box8; box8 = box9; box9 = box10; box10 = box11; box11 = box12; box12 = box13; box13 = box14; box14 = box15; box15 = box16; box16 = box17; box17 = box18; box18 = box19; box19 = box20; box20 = box21; box21 = greenBox; greenBox = redBox;
-				redBox += 1;
-				m_tiles[redBox] = 1;
-				if (Counter > 0)m_tiles[greenBox] = 5; m_tiles[box21] = 0;
-				if (Counter > 1)m_tiles[box21] = 2, m_tiles[box20] = 0;
-				if (Counter > 2)m_tiles[box20] = 5, m_tiles[box19] = 0;
-				if (Counter > 3)m_tiles[box19] = 2, m_tiles[box18] = 0;
-				if (Counter > 4)m_tiles[box18] = 5, m_tiles[box17] = 0;
-				if (Counter > 5)m_tiles[box17] = 2, m_tiles[box16] = 0;
-				if (Counter > 6)m_tiles[box16] = 5, m_tiles[box15] = 0;
-				if (Counter > 7)m_tiles[box15] = 2, m_tiles[box14] = 0;
-				if (Counter > 8)m_tiles[box14] = 5, m_tiles[box13] = 0;
-				if (Counter > 9)m_tiles[box13] = 2, m_tiles[box12] = 0;
-				if (Counter > 10)m_tiles[box12] = 5, m_tiles[box11] = 0;
-				if (Counter > 11)m_tiles[box11] = 2, m_tiles[box10] = 0;
-				if (Counter > 12)m_tiles[box10] = 5, m_tiles[box9] = 0;
-				if (Counter > 13)m_tiles[box9] = 2, m_tiles[box8] = 0;
-				if (Counter > 14)m_tiles[box8] = 5, m_tiles[box7] = 0;
-				if (Counter > 15)m_tiles[box7] = 2, m_tiles[box6] = 0;
-				if (Counter > 16)m_tiles[box6] = 5, m_tiles[box5] = 0;
-				if (Counter > 17)m_tiles[box5] = 2, m_tiles[box4] = 0;
-				if (Counter > 18)m_tiles[box4] = 5, m_tiles[box3] = 0;
-				if (Counter > 19)m_tiles[box3] = 2, m_tiles[box2] = 0;
-				if (Counter > 20)m_tiles[box2] = 5, m_tiles[box1] = 0;
-				if (Counter > 21)m_tiles[box1] = 2, m_tiles[whiteBox] = 0;
+				m_tiles[b_tiles[i]] = 2;
 			}
+			m_tiles[b_tiles[Counter]] = 0;
 		}
 		fpsCounter = 0;
 	}
