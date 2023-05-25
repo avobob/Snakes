@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+    <ClInclude Include="move_snake.h" />
     <ClInclude Include="screen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="move_snake.cpp" />
     <ClCompile Include="screen.cpp" />
   </ItemGroup>
   <ItemGroup>

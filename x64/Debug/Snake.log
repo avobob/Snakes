@@ -1,12 +1,2 @@
-﻿  main.cpp
-  screen.cpp
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(298,17): warning C4552: '>': result of expression not used
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(337,17): warning C4552: '>': result of expression not used
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(376,17): warning C4552: '>': result of expression not used
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(422,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(423,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(427,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(427,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(451): warning C4715: 'screen::GetTileColor': not all control paths return a value
+﻿  move_snake.cpp
   Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe
