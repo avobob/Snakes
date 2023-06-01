@@ -1,2 +1,9 @@
-﻿  move_snake.cpp
+﻿  screen.cpp
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(118,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(119,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(123,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(123,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(146): warning C4715: 'screen::GetTileColor': not all control paths return a value
+  LINK : E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe
