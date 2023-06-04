@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  End_Game.cpp
 E:\bobby\Documents\GitKraken\Snake\Snake\End_Game.cpp(4,6): error C2065: 'st': undeclared identifier
 E:\bobby\Documents\GitKraken\Snake\Snake\End_Game.cpp(4,17): error C2065: 'MS': undeclared identifier
@@ -13,3 +14,7 @@ E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(60,25): warning C4244: 'argu
 E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(60,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   yellow_box.cpp
   Generating Code...
+=======
+﻿  move_snake.cpp
+  Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe
+>>>>>>> parent of 6d91a21... simplify
