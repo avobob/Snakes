@@ -1,13 +1,14 @@
 #pragma once
+#include "storage.h"
 #include <vector>
-#include <string>
 #include "raylib.h"
-using namespace std;
 
-class move_snake
-{
+class move_snake{
 	public:
-	void DrawSnake(int num,int& redBox, int& greenBox, int& whiteBox, int& GameCounter, int ROWS2, int b_tiles[], int m_tiles[]);
+	storage ST;
+	void DrawSnake(int num);
+	int red = -ST.redBox - 11;
+	//int red = ST.COLS * ST.ROWS / 2;
 	private:
 };
 

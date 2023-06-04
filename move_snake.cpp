@@ -1,29 +1,20 @@
 #include "move_snake.h"
-#include "screen.h"
-#include "GreenBoxes.h"
 #include "raylib.h"
 #include <stdlib.h>
 #include <random>
 #include <iostream>
-using namespace std;
-
-void move_snake::DrawSnake(int num, int& redBox, int& greenBox, int& whiteBox, int& GameCounter, int ROWS2, int b_tiles[], int m_tiles[])
-{
-	for (int i = ROWS2; i >= 0; i--)
-	{
-		b_tiles[i] = b_tiles[i - 1];
+void move_snake::DrawSnake(int num){
+	for (int i = 20; i >= 1; i--){
+		ST.b_tiles[i] = ST.b_tiles[i - 1];
 	}
-	b_tiles[0] = greenBox;
-	greenBox = redBox;
-	redBox += num;
-	if (GameCounter < ROWS2)
-	{
-		m_tiles[redBox] = 1;
-		m_tiles[greenBox] = 2;
-		for (int i = 0; i < GameCounter; i++)
-		{
-			m_tiles[b_tiles[i]] = 2;
-		}
-		m_tiles[b_tiles[GameCounter]] = 0;
+	ST.b_tiles[0] = ST.greenBox;
+	ST.greenBox = red;
+	red += num;
+
+	if (ST.GameCounter < ST.ROWS2){
+		ST.m_tiles[red] = 1;
+		ST.m_tiles[ST.greenBox] = 2;
+		for (int i = 0; i < ST.GameCounter; i++)ST.m_tiles[ST.b_tiles[i]] = 2;
+		ST.m_tiles[ST.b_tiles[ST.GameCounter]] = 0;
 	}
 }

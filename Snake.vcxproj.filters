@@ -24,6 +24,15 @@
     <ClInclude Include="move_snake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="yellow_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="End_Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="screen.cpp">
@@ -33,6 +42,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="move_snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="yellow_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="storage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="End_Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
