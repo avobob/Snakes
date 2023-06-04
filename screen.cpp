@@ -7,6 +7,7 @@
 #include <iostream>
 
 using namespace std;
+<<<<<<< HEAD
 
 screen::screen()
 {
@@ -29,6 +30,17 @@ void screen::Load(){
 	for (int i = 0; i < ST.COLS * ST.ROWS; i++)ST.m_tiles[ST.redBox] = 1;
 =======
 
+=======
+screen::screen()
+{
+
+}
+
+screen::~screen()
+{
+
+}
+>>>>>>> parent of 6d91a21... simplify
 
 void screen::Run()
 {
@@ -37,7 +49,10 @@ void screen::Run()
 	Load();
 	while (!WindowShouldClose())
 	{
+<<<<<<< HEAD
 		fpsCounter ++;
+=======
+>>>>>>> parent of 6d91a21... simplify
 		Update(GetFrameTime());
 		Draw();
 		if (fpsCounter == frameAmount)
@@ -47,6 +62,7 @@ void screen::Run()
 	}
 	Unload();
 }
+<<<<<<< HEAD
 
 void screen::Body()
 {
@@ -142,6 +158,47 @@ void screen::Unload()
 void screen::Update(float deltaTime){
 	ST.fpsCounter++;
 	Border();{
+=======
+void screen::Border()
+{
+	for (int i = 0; i < COLS; i++)
+	{
+		m_tiles[i] = 4;
+	}
+	for (int i = 0; i < COLS * ROWS; i += COLS)
+	{
+		m_tiles[i] = 4;
+	}
+	for (int i = COLS-1; i < COLS * ROWS; i += COLS)
+	{
+		m_tiles[i] = 4;
+	}
+	for (int i = COLS * ROWS - COLS; i < COLS * ROWS; i++)
+	{
+		m_tiles[i] = 4;
+	}
+}
+void screen::Load()
+{
+	for (int i = 0; i < COLS * ROWS; i++)
+	{
+	m_tiles[i] = 0;
+	}
+	for (int i = 0; i < COLS * ROWS; i++)
+	{
+		m_tiles[redBox] = 1;
+	}
+}
+void screen::Unload()
+{
+}
+void screen::Update(float deltaTime)
+{
+	fpsCounter++;
+
+	Border();
+	{
+>>>>>>> parent of 6d91a21... simplify
 	}
 	yellow.Summon();{
 	}
@@ -169,21 +226,31 @@ void screen::Update(float deltaTime)
 	TOD++;
 	Border();
 	{
+<<<<<<< HEAD
 	}
 	for (int i = 0; i < 729; i++)
 	{
+=======
+>>>>>>> parent of 6d91a21... simplify
 		if (m_tiles[yellowBox] == 3)
 		{
 			break;
 		}
 		else
 		{
+<<<<<<< HEAD
 			cout << "-----hello-------" << endl;
+=======
+>>>>>>> parent of 6d91a21... simplify
 			yellow = true;
 			break;
 		}
 	}
+<<<<<<< HEAD
 	if (yellow)
+=======
+	if (yellow) //Draws Fruit
+>>>>>>> parent of 6d91a21... simplify
 	{
 		yellow = false;
 		random_device rd;
@@ -201,49 +268,75 @@ void screen::Update(float deltaTime)
 			frameAmount--;
 		}
 	}
+<<<<<<< HEAD
 	if (m_tiles[redBox] == 4)
+=======
+	if (m_tiles[redBox] != 1)
+>>>>>>> parent of 6d91a21... simplify
 	{
 		GameOver = "GAME OVER!";
 		GameEnd = true;
 		Move = 0;
 	}
+<<<<<<< HEAD
 	else if (m_tiles[redBox] == 2)
 	{
 		GameOver = "GAME OVER!";
 		GameEnd = true;
 		Move = 0;
 	}
+=======
+>>>>>>> parent of 6d91a21... simplify
 	if(!GameEnd)
 	{
 		if (IsKeyPressed(KEY_A))
 		{
+<<<<<<< HEAD
 			if (Key != 1 && TOD > frameAmount)
 			{
 				Move = 4;
 				Key = 4;
 				TOD = 0;
+=======
+			if (Move != 1)
+			{
+				Move = 4;
+>>>>>>> parent of 6d91a21... simplify
 			}
 		}
 		if (IsKeyPressed(KEY_W))
 		{
+<<<<<<< HEAD
 			if (Key != 2 && TOD > frameAmount)
 			{
 				Move = 3;
 				Key = 3;
 				TOD = 0;
+=======
+			if (Move != 2)
+			{
+				Move = 3;
+>>>>>>> parent of 6d91a21... simplify
 			}
 		}
 		if (IsKeyPressed(KEY_S))
 		{
+<<<<<<< HEAD
 			if (Key != 3 && TOD > frameAmount)
 			{
 				Move = 2;
 				Key = 2;
 				TOD = 0;
+=======
+			if (Move != 3)
+			{
+				Move = 2;
+>>>>>>> parent of 6d91a21... simplify
 			}
 		}
 		if (IsKeyPressed(KEY_D))
 		{
+<<<<<<< HEAD
 			if (Key != 4 && TOD > frameAmount)
 			{
 				Move = 1;
@@ -453,11 +546,36 @@ void screen::Update(float deltaTime)
 		fpsCounter = 0;
 	}
 >>>>>>> parent of 6d91a21... simplify
+=======
+			if (Move != 4)
+			{
+				Move = 1;
+			}
+		}
+	}
+	if ((Move == 4) && (fpsCounter == frameAmount))//a
+	{
+		snake.DrawSnake(-1,redBox, greenBox, whiteBox, GameCounter, ROWS2, b_tiles, m_tiles);
+	}
+	if ((Move == 3) && (fpsCounter == frameAmount))//w
+	{
+		snake.DrawSnake(-COLS, redBox, greenBox, whiteBox, GameCounter, ROWS2, b_tiles, m_tiles);
+	}
+	if ((Move == 2) && (fpsCounter == frameAmount))//s
+	{
+		snake.DrawSnake(COLS, redBox, greenBox, whiteBox, GameCounter, ROWS2, b_tiles, m_tiles);
+	}
+	if ((Move == 1) && (fpsCounter == frameAmount))//d
+	{
+		snake.DrawSnake(1, redBox, greenBox, whiteBox, GameCounter, ROWS2, b_tiles, m_tiles);
+	}
+>>>>>>> parent of 6d91a21... simplify
 }
 	void screen::Draw()
 	{
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
+<<<<<<< HEAD
 <<<<<<< HEAD
 		for (int ROWINDEX = 0; ROWINDEX < ST.ROWS; ROWINDEX++){
 			for (int COLINDEX = 0; COLINDEX < ST.COLS; COLINDEX++){
@@ -471,6 +589,8 @@ void screen::Update(float deltaTime)
 						int textWidth = MeasureText(ST.GameOver, 100);
 						DrawText(ST.GameOver, GetScreenWidth() / 2 - textWidth / 2, GetScreenHeight() / 2 + -100, 100, PURPLE);
 =======
+=======
+>>>>>>> parent of 6d91a21... simplify
 		for (int ROWINDEX = 0; ROWINDEX < ROWS; ROWINDEX++)
 		{
 			for (int COLINDEX = 0; COLINDEX < COLS; COLINDEX++)

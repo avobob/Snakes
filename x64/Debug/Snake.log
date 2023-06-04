@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  End_Game.cpp
 E:\bobby\Documents\GitKraken\Snake\Snake\End_Game.cpp(4,6): error C2065: 'st': undeclared identifier
 E:\bobby\Documents\GitKraken\Snake\Snake\End_Game.cpp(4,17): error C2065: 'MS': undeclared identifier
@@ -30,5 +31,8 @@ E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(427,19): warning C4244: 'arg
   Generating Code...
 E:\bobby\Documents\GitKraken\Snake\Snake\screen.cpp(451): warning C4715: 'screen::GetTileColor': not all control paths return a value
 >>>>>>> parent of 560d6e4... actually finished and done
+=======
+﻿  move_snake.cpp
+>>>>>>> parent of 6d91a21... simplify
   Snake.vcxproj -> E:\bobby\Documents\GitKraken\Snake\x64\Debug\Snake.exe
 >>>>>>> parent of 6d91a21... simplify
