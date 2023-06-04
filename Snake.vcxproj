@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClInclude Include="End_Game.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="move_snake.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="storage.h" />
     <ClInclude Include="yellow_box.h" />
@@ -137,7 +136,6 @@
   <ItemGroup>
     <ClCompile Include="End_Game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="move_snake.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="storage.cpp" />
     <ClCompile Include="yellow_box.cpp" />
